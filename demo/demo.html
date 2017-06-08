@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PlaceHolder Demo</title>
+</head>
+<body>
+	<input name="myContent" type="text" placeholder="请输入内容..." />
+	<input type="button" id="btn_ok" value="确定" />
+	<input type="button" id="btn_cl" value="清除" />
+</body>
+<script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../scripts/placeholder.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$('#btn_ok').click(function(){
+		var content = getInputValue("myContent");
+		if(content)
+		{
+			alert("content = " + content);
+		} else {
+			alert('myContent 内容为空');
+		}
+	});
+
+	$('#btn_cl').click(function(){
+		clearInputValue("myContent");
+	});
+})
+
+</script>
+</html>

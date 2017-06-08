@@ -1,6 +1,3 @@
-/**
- * 解决浏览器对输入框属性 placeholder 的兼容性问题
- * */
 $(function(){
 	window.addPlaceholder = function($input){
 		var tipValue = $input.attr('placeholder');
@@ -18,6 +15,8 @@ $(function(){
 			} else if($input.val() == tipValue) {
 				$(this).addClass("phcolor");
 			}
+		}).keydown(function() {
+			$(this).removeClass("phcolor");
 		});
 	};
 	window.supportPlaceholder = 'placeholder' in document.createElement('input');
